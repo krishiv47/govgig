@@ -1,0 +1,10 @@
+{
+  "name": "govgig-portal-backend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Mock backend for the GovGig Portal prototype",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

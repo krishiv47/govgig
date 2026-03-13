@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GovGig Portal Hackathon Pitch</title>
+    <style>
+      :root {
+        --bg: #07111f;
+        --panel: rgba(13, 25, 45, 0.9);
+        --ink: #ecf3ff;
+        --muted: #98a6c4;
+        --accent: #00d4ff;
+        --accent-2: #2fe38a;
+        --warn: #ffb443;
+        --line: rgba(255, 255, 255, 0.1);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Arial, sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at top left, rgba(0, 212, 255, 0.15), transparent 24%),
+          radial-gradient(circle at bottom right, rgba(47, 227, 138, 0.12), transparent 22%),
+          var(--bg);
+        overflow: hidden;
+      }
+
+      .deck {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+      }
+
+      .slide {
+        position: absolute;
+        inset: 0;
+        display: none;
+        padding: 56px 64px 88px;
+      }
+
+      .slide.active {
+        display: grid;
+      }
+
+      .slide-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 28px;
+      }
+
+      .hero {
+        align-content: center;
+      }
+
+      .eyebrow {
+        margin: 0 0 14px;
+        color: var(--accent);
+        font-size: 14px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        line-height: 1;
+      }
+
+      h1 {
+        font-size: 68px;
+        margin-bottom: 18px;
+      }
+
+      h2 {
+        font-size: 42px;
+        margin-bottom: 22px;
+      }
+
+      h3 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      p,
+      li {
+        color: var(--muted);
+        font-size: 22px;
+        line-height: 1.45;
+      }
+
+      ul {
+        margin: 0;
+        padding-left: 24px;
+      }
+
+      .panel,
+      .stat,
+      .mini-card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 22px;
+      }
+
+      .stat-grid,
+      .mini-grid {
+        display: grid;
+        gap: 16px;
+      }
+
+      .stat strong {
+        display: block;
+        margin-top: 8px;
+        font-size: 34px;
+        color: var(--ink);
+      }
+
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+
+      .kpi {
+        color: var(--accent-2);
+      }
+
+      .quote {
+        font-size: 28px;
+        color: var(--ink);
+        line-height: 1.4;
+      }
+
+      .footer {
+        position: absolute;
+        left: 64px;
+        right: 64px;
+        bottom: 28px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .nav-help {
+        position: absolute;
+        top: 20px;
+        right: 24px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      @media print {
+        body {
+          overflow: visible;
+          background: #07111f;
+        }
+
+        .slide {
+          position: relative;
+          display: block !important;
+          page-break-after: always;
+          min-height: 100vh;
+        }
+
+        .nav-help {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="deck">
+      <div class="nav-help">Use left/right arrow keys</div>
+
+      <section class="slide active">
+        <div class="slide-grid">
+          <div class="hero">
+            <p class="eyebrow">Hackathon Pitch</p>
+            <h1>GovGig Portal</h1>
+            <p>
+              A government-backed platform for verified gig worker registration, compliance,
+              company allocation, and insurance access.
+            </p>
+          </div>
+          <div class="stat-grid">
+            <div class="stat">
+              <span>Core idea</span>
+              <strong>Verified workers, regulated access, stronger protections</strong>
+            </div>
+            <div class="stat">
+              <span>Prototype focus</span>
+              <strong>Registry, companies, compliance, live map, insurance marketplace</strong>
+            </div>
+          </div>
+        </div>
+        <div class="footer"><span>GovGig Portal</span><span>1 / 8</span></div>
+      </section>
+
+      <section class="slide">
+        <h2>The Problem</h2>
+        <div class="two-col">
+          <div class="panel">
+            <h3>For workers</h3>
+            <ul>
+              <li>No single trusted registry or verified identity layer</li>
+              <li>Weak protection around working hours and unsafe driving</li>
+              <li>Little access to affordable insurance tied to work records</li>
+              <li>Ratings and data usage can feel unfair or opaque</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>For institutions</h3>
+            <ul>
+              <li>Companies struggle to source verified workers fast</li>
+              <li>Government lacks clean compliance visibility</li>
+              <li>Insurers lack structured worker data for tailored plans</li>
+              <li>Worker protection systems are fragmented</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer"><span>GovGig Portal</span><span>2 / 8</span></div>
+      </section>
+
+      <section class="slide">
+        <h2>Our Solution</h2>
+        <div class="mini-grid">
+          <div class="mini-card">
+            <h3>Government registry</h3>
+            <p>Verified worker identity, consented data sharing, and anonymous rating preference.</p>
+          </div>
+          <div class="mini-card">
+            <h3>Company demand access</h3>
+            <p>Companies can request workers through a structured government-backed portal.</p>
+          </div>
+          <div class="mini-card">
+            <h3>Insurance marketplace</h3>
+            <p>Insurance providers can publish health plans and workers can buy them in the same portal.</p>
+          </div>
+        </div>
+        <div class="footer"><span>GovGig Portal</span><span>3 / 8</span></div>
+      </section>
+
+      <section class="slide">
+        <h2>Working Model</h2>
+        <div class="two-col">
+          <div class="panel">
+            <h3>Idle state</h3>
+            <ul>
+              <li>Shows worker location</li>
+              <li>Shows nearby pickup and delivery preview points</li>
+              <li>No active route until assignment happens</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>Assigned state</h3>
+            <ul>
+              <li>Company request changes the route</li>
+              <li>Worker marker moves live on the map</li>
+              <li>ETA, location, speed, and fuel change continuously</li>
+              <li>Map reflects live route progress</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer"><span>GovGig Portal</span><span>4 / 8</span></div>
+      </section>
+
+      <section class="slide">
+        <h2>Key Features</h2>
+        <div class="mini-grid">
+          <div class="mini-card">
+            <strong class="kpi">Registry Controls</strong>
+            <p>Worker KYC-style registration, data-sharing preferences, and anonymous ratings.</p>
+          </div>
+          <div class="mini-card">
+            <strong class="kpi">Compliance Engine</strong>
+            <p>Traffic-aware speed checks, working-hours tracking, and fuel monitoring.</p>
+          </div>
+          <div class="mini-card">
+            <strong class="kpi">Company Matching</strong>
+            <p>Verified company demand board for allocating registered workers.</p>
+          </div>
+          <div class="mini-card">
+            <strong class="kpi">Insurance Access</strong>
+            <p>Health insurance plans posted by different companies with in-app purchase flow.</p>
+          </div>
+        </div>
+        <div class="footer"><span>GovGig Portal</span><span>5 / 8</span></div>
+      </section>
+
+      <section class="slide">
+        <h2>Why It Matters</h2>
+        <div class="two-col">
+          <div class="panel">
+            <h3>Worker impact</h3>
+            <ul>
+              <li>Better protection and structured recognition</li>
+              <li>More transparent compliance and data use</li>
+              <li>Access to insurance and welfare support</li>
+              <li>Fairer treatment through anonymous rating options</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>System impact</h3>
+            <ul>
+              <li>Better worker verification for companies</li>
+              <li>Better visibility for government oversight</li>
+              <li>Better product fit for insurance providers</li>
+              <li>Unified digital infrastructure for gig work</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer"><span>GovGig Portal</span><span>6 / 8</span></div>
+      </section>
+
+      <section class="slide">
+        <h2>System Layout</h2>
+        <div class="two-col">
+          <div class="panel">
+            <h3>Frontend</h3>
+            <ul>
+              <li>Static portal UI in `frontend/`</li>
+              <li>Vanilla JavaScript</li>
+              <li>Leaflet live map</li>
+              <li>Simulation of worker movement and compliance data</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>Backend</h3>
+            <ul>
+              <li>Mock API scaffold in `backend/`</li>
+              <li>Workers endpoint</li>
+              <li>Company requests endpoint</li>
+              <li>Insurance plans endpoint</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer"><span>GovGig Portal</span><span>7 / 8</span></div>
+      </section>
+
+      <section class="slide">
+        <div class="hero">
+          <p class="eyebrow">Closing</p>
+          <h2>GovGig Portal connects worker protection, company demand, and insurance access in one system.</h2>
+          <p class="quote">
+            Instead of treating gig workers as invisible labor, this prototype frames them as verified
+            registered participants in a governed, safer, and more inclusive digital workforce.
+          </p>
+        </div>
+        <div class="footer"><span>GovGig Portal</span><span>8 / 8</span></div>
+      </section>
+    </div>
+
+    <script>
+      const slides = Array.from(document.querySelectorAll(".slide"));
+      let index = 0;
+
+      function showSlide(next) {
+        index = Math.max(0, Math.min(slides.length - 1, next));
+        slides.forEach((slide, i) => {
+          slide.classList.toggle("active", i === index);
+        });
+      }
+
+      window.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowRight" || event.key === "PageDown") {
+          showSlide(index + 1);
+        } else if (event.key === "ArrowLeft" || event.key === "PageUp") {
+          showSlide(index - 1);
+        }
+      });
+    </script>
+  </body>
+</html>
